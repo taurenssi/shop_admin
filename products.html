@@ -1,0 +1,82 @@
+<div class="page-header">
+	<h1><span class="glyphicon glyphicon-apple"></span> Products</h1>
+</div>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<form class="form-inline">
+			<div class="form-group">
+				<input type="text" class="form-control" id="product_name" placeholder="Product Name">
+			</div>
+			<div class="form-group">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="product_category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Category<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="product_category">
+						<li ng-repeat="category in app.categories">
+							<a href="#">{{category.name}}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="product_name" placeholder="Price">
+			</div>
+			<button type="submit" class="btn btn-default">
+				<span class="glyphicon glyphicon-apple"></span> Add New Product
+			</button>
+		</form>
+	</div>
+</div>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>Product Name</th>
+			<th>Category</th>
+			<th>Price</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="product in app.products">
+			<td>{{product.id}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.category}}</td>
+			<td>{{product.price | currency}}</td>
+			<td>
+			<button class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</button>
+			<button class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button></td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>
+			<input type="text" class="form-control input-sm" value="Jack Deniels">
+			</td>
+			<td>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					Alcohol	<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li ng-repeat="category in app.categories">
+						<a href="#">{{name}}</a>
+					</li>
+				</ul>
+			</div></td>
+			<td>100.00 $</td>
+			<td>
+			<button class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-ok"></span>
+			</button>
+			<button class="btn btn-default btn-sm">
+				<span class="glyphicon glyphicon-remove"></span>
+			</button></td>
+		</tr>
+	</tbody>
+</table>
